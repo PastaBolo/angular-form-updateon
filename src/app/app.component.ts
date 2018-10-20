@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-root',
+  selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -13,12 +13,19 @@ export class AppComponent {
       zipCode: new FormControl(null, Validators.required),
       city: new FormControl()
     })
-  }, { updateOn: 'submit' });
+  }/*, { updateOn: 'submit' }*/);
 
-  onSubmit(): void {
-    this.form = new FormGroup(
-      this.form.controls,
-      { updateOn: 'change' }
-    );
-  }
+  /**
+   * This method is usefull in case the updateOn option of the
+   * FormGroup has to be changed
+   * 
+   * In our case, this is useless because the validation is displayed depending
+   * on the submitted property of the form-submission directive injected
+   */
+  // onSubmit(): void {
+  //   this.form = new FormGroup(
+  //     this.form.controls,
+  //     { updateOn: 'change' }
+  //   );
+  // }
 }
