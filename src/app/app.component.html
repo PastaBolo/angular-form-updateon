@@ -9,7 +9,7 @@
 <hr>
 
 <h2>Reactive Form</h2>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form [formGroup]="form">
   Name*<input formControlName="name">
   <app-error-message [formElement]="form.get('name')"></app-error-message>
   <fieldset formGroupName="address">
